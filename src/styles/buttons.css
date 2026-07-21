@@ -1,0 +1,52 @@
+.btn-signature {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
+  padding: 0.75rem 1.5rem;
+  border-radius: var(--radius-full);
+  background: var(--gradient-signature);
+  color: var(--color-on-brand);
+  font-weight: 600;
+  overflow: hidden;
+  box-shadow: var(--shadow-glow-soft);
+  transition: filter var(--duration-fast) var(--ease-signature),
+    transform var(--duration-fast) var(--ease-signature),
+    box-shadow var(--duration-base) var(--ease-signature);
+}
+
+.btn-signature::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(115deg, transparent 30%, rgba(255, 255, 255, 0.35) 50%, transparent 70%);
+  transform: translateX(-100%);
+  transition: transform 0.6s var(--ease-signature);
+}
+
+.btn-signature:hover {
+  filter: brightness(1.1);
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-glow-lg);
+}
+
+.btn-signature:hover::after {
+  transform: translateX(100%);
+}
+
+.btn-ghost {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
+  padding: 0.75rem 1.5rem;
+  border-radius: var(--radius-full);
+  border: 1px solid var(--color-line);
+  color: var(--color-mist);
+  transition: border-color var(--duration-fast) var(--ease-signature),
+    background var(--duration-fast) var(--ease-signature);
+}
+
+.btn-ghost:hover {
+  border-color: rgba(237, 237, 244, 0.25);
+  background: rgba(237, 237, 244, 0.04);
+}

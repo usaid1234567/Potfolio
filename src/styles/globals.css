@@ -1,0 +1,45 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import "./variables.css";
+@import "./typography.css";
+@import "./layout.css";
+@import "./cards.css";
+@import "./buttons.css";
+@import "./gradients.css";
+@import "./scrollbar.css";
+@import "./animations.css";
+@import "./utilities.css";
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: var(--color-void);
+  color: var(--color-mist);
+  min-height: 100vh;
+  transition: background-color var(--duration-base) var(--ease-signature), color var(--duration-base) var(--ease-signature);
+}
+
+:focus-visible {
+  outline: 2px solid var(--color-violet-soft);
+  outline-offset: 3px;
+  border-radius: var(--radius-sm);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}

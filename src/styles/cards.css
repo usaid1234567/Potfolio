@@ -1,0 +1,23 @@
+.glass-card {
+  background: var(--glass-bg);
+  border: 1px solid var(--glass-border);
+  border-radius: var(--radius-lg);
+  backdrop-filter: blur(var(--glass-blur));
+  -webkit-backdrop-filter: blur(var(--glass-blur));
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.35);
+  transition: border-color var(--duration-base) var(--ease-signature),
+    transform var(--duration-base) var(--ease-signature),
+    box-shadow var(--duration-base) var(--ease-signature);
+}
+
+.glass-card:hover {
+  border-color: rgba(124, 92, 255, 0.4);
+  transform: translateY(-6px) scale(1.01);
+  box-shadow: 0 20px 48px rgba(0, 0, 0, 0.35), var(--shadow-glow-soft);
+}
+
+.glass-panel {
+  background: var(--color-surface);
+  border: 1px solid var(--color-line);
+  border-radius: var(--radius-lg);
+}

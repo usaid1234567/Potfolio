@@ -1,0 +1,9 @@
+export interface Education {
+  id: string;
+  degree: string;
+  institution: string;
+  startDate: string;
+  endDate: string;
+  highlights: string[];
+  certifications?: string[];
+}
