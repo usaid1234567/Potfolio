@@ -1,18 +1,32 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+/* =========================
+   IMPORTS (MUST STAY AT TOP)
+========================= */
 
+@import "./scrollbar.css";
+@import "./animations.css";
+@import "./utilities.css";
 @import "./variables.css";
 @import "./typography.css";
 @import "./layout.css";
 @import "./cards.css";
 @import "./buttons.css";
 @import "./gradients.css";
-@import "./scrollbar.css";
-@import "./animations.css";
-@import "./utilities.css";
 
-* {
+/* =========================
+   TAILWIND
+========================= */
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* =========================
+   GLOBAL RESET
+========================= */
+
+*,
+*::before,
+*::after {
   box-sizing: border-box;
 }
 
@@ -21,10 +35,12 @@ html {
 }
 
 body {
+  min-height: 100vh;
   background-color: var(--color-void);
   color: var(--color-mist);
-  min-height: 100vh;
-  transition: background-color var(--duration-base) var(--ease-signature), color var(--duration-base) var(--ease-signature);
+  transition:
+    background-color var(--duration-base) var(--ease-signature),
+    color var(--duration-base) var(--ease-signature);
 }
 
 :focus-visible {
