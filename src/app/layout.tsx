@@ -24,22 +24,32 @@ const NO_FLASH_THEME_SCRIPT = `
 (function () {
   try {
     var stored = window.localStorage.getItem("${SITE_CONFIG.themeStorageKey}");
-    var theme = stored === "dark" || stored === "light" ? stored : "${siteConfig.defaultTheme}";
+    var theme =
+      stored === "dark" || stored === "light"
+        ? stored
+        : "${siteConfig.defaultTheme}";
+
     document.documentElement.classList.toggle("dark", theme === "dark");
     document.documentElement.style.colorScheme = theme;
   } catch (e) {}
 })();
 `;
 
-export default function RootLayout({ children }: { children: React.ReactNode }) {
+export default function RootLayout({
+  children,
+}: {
+  children: React.ReactNode;
+}) {
   return (
     <html lang="en" suppressHydrationWarning>
       <head>
         <Script id="no-flash-theme" strategy="beforeInteractive">
           {NO_FLASH_THEME_SCRIPT}
         </Script>
+
         <StructuredData data={PERSON_SCHEMA} />
       </head>
+
       <body
         suppressHydrationWarning
         className={`${fontDisplay.variable} ${fontBody.variable} ${fontMono.variable} font-body bg-base-void text-mist antialiased`}
