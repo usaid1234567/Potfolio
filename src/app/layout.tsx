@@ -18,8 +18,12 @@ const PERSON_SCHEMA = {
   email: SITE_CONFIG.email,
   jobTitle: "Web Developer",
   description: SITE_CONFIG.description,
-};
 
+  sameAs: [
+    SITE_CONFIG.social.github,
+    SITE_CONFIG.social.linkedin,
+  ],
+};
 const NO_FLASH_THEME_SCRIPT = `
 (function () {
   try {
