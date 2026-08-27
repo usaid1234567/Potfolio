@@ -12,4 +12,4 @@ export const SITE_CONFIG = {
     github: "https://github.com/usaid1234567",
     linkedin: "www.linkedin.com/in/m-usaid-full-stack",
   },
-} as const;
+} as const; 
